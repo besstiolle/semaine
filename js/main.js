@@ -18,34 +18,50 @@
     }
     
     let init = () => {
-        if(!isNddPair && !isNddImpair){
-            return;
-        }
 
         let isPaire = ((getWeekNumber(new Date())%2) == 0);
-        let title = "";
-        let sub = "";
+        let question = "";
+        let answer = "";
+        let other = "";
+        let css = "";
 
-        if(isNddPair){
-            if(isPaire){
-                title= `Yes, it's a semaine paire`
-                sub=`So you can venir à l'agence<br/>if your semaine is paire<br/>else : non, don't come à l'agence.`
-            } else {
-                title= `No, it's a semaine impaire`
-                sub=`So if your semaine is paire<br/>you can stay at your maison<br/>and come à l'agence the semaine prochaine.`
-            }
+
+        if(!isNddPair && !isNddImpair){
+            question = `Oups, wrong door....`;
         } else {
-            if(!isPaire){
-                title= `Yes, it's a semaine impaire`
-                sub=`So you can venir à l'agence<br/>if your semaine is impaire<br/>else : non, don't come à l'agence.`
+            if(isNddPair){
+                question = `Is it a semaine paire ?`
+                if(isPaire){
+                    answer= `Yes`
+                    css=`Y`
+                    other=`So you can venir à l'agence if your semaine is paire, else : non, don't come à l'agence.`
+                } else {
+                    answer= `No`
+                    css=`N`
+                    other=`So if your semaine is paire you can stay at your maison and come à l'agence the semaine prochaine.`
+                }
             } else {
-                title= `No, it's a semaine paire`
-                sub=`So if your semaine is impaire<br/>you can stay at your maison<br/>and come à l'agence the semaine prochaine.`
+                question = `Is it a semaine impaire ?`
+                if(!isPaire){
+                    answer= `Yes`
+                    css=`Y`
+                    other=`So you can venir à l'agence if your semaine is impaire, else : non, don't come à l'agence.`
+                } else {
+                    answer= `No`
+                    css=`N`
+                    other=`So if your semaine is impaire you can stay at your maison and come à l'agence the semaine prochaine.`
+                }
             }
+            
+            
         }
 
-        document.getElementById('title').innerHTML = title;
-        document.getElementById('subtitle').innerHTML = sub;
+
+        document.getElementById('Q').innerHTML = question;
+        document.getElementById('A').innerHTML = answer;
+        document.getElementById('X').innerHTML = other;
+        
+        document.getElementById('A').classList.add(css);
 
     } 
 

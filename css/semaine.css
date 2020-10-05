@@ -2,9 +2,37 @@ body{
     background-color: #808080;
     margin: 10% auto 0;
     text-align: center;
-    font-size: 2em;
 }
 
-h1{
+
+#Q {
+    font-size: 3em;
+    font-style: italic;
+}
+
+#Q:before{
+    content:"“"
+}
+#Q:after{
+    content:"”"
+}
+
+#A {
     font-family: 'Sansita Swashed';
+    font-size: 10em;
+}
+
+#A.Y {
+    text-shadow: 4px 4px 2px rgba(0, 150, 150, 1);
+}
+#A.N {
+    text-shadow: 4px 4px 2px rgba(150, 0, 150, 1);
+}
+
+
+#X {
+    font-size: 1em;
+    font-family: 'Roboto';
+    margin-top: 5%;
+    font-style: italic;
 }
