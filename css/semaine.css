@@ -1,4 +1,10 @@
 body{
     background-color: #808080;
+    margin: 10% auto 0;
+    text-align: center;
+    font-size: 2em;
+}
+
+h1{
     font-family: 'Sansita Swashed';
 }
