@@ -1,7 +1,7 @@
 (function(){  
 
-    const isNddPair = (window.location.hostname == "semainepaire.fr" || window.location.hostname == "localhost" )
-    const isNddImpair = (window.location.hostname == "semainepaire.fr")
+    const isNddPair = (window.location.hostname == "www.semainepaire.fr" || window.location.hostname == "localhost" )
+    const isNddImpair = (window.location.hostname == "www.semaineimpaire.fr")
 
     let getWeekNumber = (d) => {
         // Copy date so don't modify original
